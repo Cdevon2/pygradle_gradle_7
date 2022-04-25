@@ -26,11 +26,7 @@ import com.linkedin.gradle.python.tasks.supports.SupportsDistutilsCfg;
 import com.linkedin.gradle.python.wheel.EditablePythonAbiContainer;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.artifacts.Configuration;
-import org.gradle.api.tasks.Input;
-import org.gradle.api.tasks.InputFiles;
-import org.gradle.api.tasks.Optional;
-import org.gradle.api.tasks.OutputFile;
-import org.gradle.api.tasks.TaskAction;
+import org.gradle.api.tasks.*;
 
 import java.io.File;
 
@@ -59,6 +55,7 @@ public class InstallVirtualEnvironmentTask extends DefaultTask implements Failur
     }
 
     @Override
+    @Internal
     public String getReason() {
         return container.getCommandOutput();
     }
@@ -67,6 +64,7 @@ public class InstallVirtualEnvironmentTask extends DefaultTask implements Failur
         this.pythonDetails = pythonDetails;
     }
 
+    @Input
     public PythonDetails getPythonDetails() {
         return pythonDetails;
     }

@@ -22,6 +22,7 @@ import java.util.Set;
 import org.apache.commons.io.FileUtils;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
+import org.gradle.api.tasks.Input;
 import org.gradle.process.ExecResult;
 
 import java.io.File;
@@ -53,6 +54,7 @@ public class Flake8Task extends AbstractPythonMainSourceDefaultTask {
         this.ignoreRules = ignoreRules;
     }
 
+    @Input
     public Set<String> getIgnoreRules() {
         return ignoreRules;
     }
