@@ -26,7 +26,12 @@ import com.linkedin.gradle.python.tasks.supports.SupportsDistutilsCfg;
 import com.linkedin.gradle.python.wheel.EditablePythonAbiContainer;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.artifacts.Configuration;
-import org.gradle.api.tasks.*;
+import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.InputFiles;
+import org.gradle.api.tasks.Internal;
+import org.gradle.api.tasks.Optional;
+import org.gradle.api.tasks.OutputFile;
+import org.gradle.api.tasks.TaskAction;
 
 import java.io.File;
 

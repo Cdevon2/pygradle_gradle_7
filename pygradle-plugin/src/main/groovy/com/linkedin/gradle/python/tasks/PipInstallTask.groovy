@@ -74,7 +74,7 @@ class PipInstallTask extends DefaultTask implements FailureReasonProvider, Suppo
     @Input
     boolean sorted = true
 
-    @Input
+    @Internal
     PackageSettings<PackageInfo> packageSettings
 
     @Internal

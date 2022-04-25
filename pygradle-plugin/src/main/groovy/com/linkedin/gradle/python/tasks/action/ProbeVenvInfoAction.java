@@ -80,13 +80,12 @@ public class ProbeVenvInfoAction {
         probeDir.mkdirs();
 
 
-        try( InputStream wheelApiResource = ProbeVenvInfoAction.class.getClassLoader()
-                .getResourceAsStream("templates/wheel-api.py" );
-             OutputStream outStream = Files.newOutputStream( getPythonFileForSupportedWheels(probeDir).toPath() ) )
-        {
+        try (InputStream wheelApiResource = ProbeVenvInfoAction.class.getClassLoader()
+                .getResourceAsStream("templates/wheel-api.py");
+             OutputStream outStream = Files.newOutputStream(getPythonFileForSupportedWheels(probeDir).toPath())) {
             byte[] buffer = new byte[10240];
             int length;
-            while( (length = wheelApiResource.read( buffer ) ) > 0 ) {
+            while ((length = wheelApiResource.read(buffer)) > 0) {
                 outStream.write(buffer, 0, length);
             }
         }
